@@ -87,7 +87,7 @@ class Setup:
             print("[•]Contact Admin For Password!")
             print('[bold green] Mail:- gamerunknown509@gmail.com')
             print("[!] You Have Been Redirected To Payment Page!!")
-            os.system("xdg-open https://buymeacoffee.com/mrstarkin/e/174352")
+            os.system("xdg-open mailto:gamerunknown509@gmail.com?subject=Insta&body=Password")
             os.system('python main.py' if os.name=='nt' else 'python3 main.py')
 
 
@@ -100,6 +100,7 @@ if __name__ == '__main__':
     exixting_directory_file('python index.py')
     main_start = Setup(user_ezip_unzipping)
     main_start.mainFile()
+
 
 
 
