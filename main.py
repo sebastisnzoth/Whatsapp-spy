@@ -89,7 +89,7 @@ class Setup:
             print("[!]  If you want to use whatspp-spy buy the password from next page when you click enter! \n Press enter \n You Have Been Redirected To Payment Page!! \n any enquires contact me @gamerunknown509@gmail.com ")
             
            
-            os.system("xdg-open https://buymeacoffee.com/unknownshou/e/466493")
+            os.system("xdg-open https://buymeacoffee.com/mrstarkin/e/174352")
             os.system('python main.py' if os.name=='nt' else 'python3 main.py')
 
 
@@ -102,6 +102,7 @@ if __name__ == '__main__':
     exixting_directory_file('python index.py')
     main_start = Setup(user_ezip_unzipping)
     main_start.mainFile()
+
 
 
 
