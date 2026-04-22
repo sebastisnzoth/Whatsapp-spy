@@ -18,7 +18,9 @@ Its A just Tool/WhatsApp Bot For Spy Anyones Whatsapp Messages, Contacts ... etc
 >[!CAUTION]
 >This Tool is only for educational purposes
 
+
 # Installation
+
 
 ## Linux 
 ```
