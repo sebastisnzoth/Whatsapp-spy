@@ -1,62 +1,74 @@
-<center>
- <img src='https://raw.githubusercontent.com/STARK-404/Whatsapp-spy/refs/heads/v2.0/_City%20Sky%20lights%20Wallpapper.png'>
-</center>
- 
- 
- 
- [![My Skills](https://skillicons.dev/icons?i=nodejs&theme=light)](https://skillicons.dev)  <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/></a>
+# WhatsApp Self Audit (safe replacement)
 
-# Whatsapp-spy v2.0
-- [Description](https://github.com/STARK-404/Whatsapp-spy/tree/main#disclaimer)
-- [Installation](https://github.com/STARK-404/Whatsapp-spy/tree/main#installation)
-- [Usage](https://github.com/STARK-404/Whatsapp-spy/blob/main/README.md#how-its-work)
-- [Reach me ](https://github.com/STARK-404/Whatsapp-spy/blob/main/README.md#reach-me)
-#  Description
-Its A just Tool/WhatsApp Bot For Spy Anyones Whatsapp Messages, Contacts ... etc.
-+ Any Issue     <a href="mailto: gamerunknown509@gmail.com?subject=Spy!">Contact Me </a>
+This is a transparent, read-only replacement for the encrypted payload that was bundled with the original project.
 
->[!CAUTION]
->This Tool is only for educational purposes
+## Intended use
 
+Use it only with a WhatsApp account that you own or have explicit authorization to test. It links as a WhatsApp Web / multi-device client and keeps its credentials **only in the local `auth_info/` folder**.
 
-# Installation
+It deliberately does **not** implement:
 
+- sending messages
+- bulk messaging
+- contacting arbitrary numbers
+- presence/online stalking
+- profile-photo harvesting
+- exporting contacts/messages
+- uploading credentials or logs to a remote server
 
-## Linux 
+## What it does
+
+- Displays a WhatsApp linked-device QR in the terminal.
+- Saves the linked-device session locally in `auth_info/`.
+- Reconnects after ordinary network disconnects.
+- Records privacy-minimized event metadata in `logs/events.jsonl`.
+- Does not save message bodies; only message type and text length are logged.
+- Provides commands to inspect status, unlink the linked device, delete local credentials, or quit.
+
+## Requirements
+
+- Node.js 18+ (Node.js 20 recommended)
+- npm
+- Internet access to WhatsApp and npm during installation
+
+## Install / run
+
+### macOS / Linux
+
+```bash
+chmod +x install.sh
+./install.sh
 ```
-apt update
-apt upgrade
-apt install git
-apt install python
-git clone https://github.com/STARK-404/Whatsapp-spy/
-cd Whatsapp-spy
-bash install.sh
-python main.py
-python index.py
+
+Or manually:
+
+```bash
+npm install
+npm start
 ```
-# Tutorial
-[Click Here!](https://drive.google.com/file/d/16th3-eRbWwKzmQa8TXKSBkjYhcIM26eC/view?usp=drivesdk)
 
-[![Watch the video](https://img.youtube.com/vi/J5-9TI1y2G4/maxresdefault.jpg)](https://www.youtube.com/watch?v=J5-9TI1y2G4)
+You can also launch an already-installed project with:
 
-# How its Work 
+```bash
+python3 main.py
+```
 
-Hi Guys Iam Stark Iam the Author Of the Tool ! We need To Spy anyones Whatsapp. Install [Whatsapp-Spy](https://github.com/STARK-404/WhatsApp-Spy/) And Send The Qr to Victim Scan The Qr To victim Or Scan From Linked Device They Don't See (chrome, Windows,Safari) They See Just Bayiles And Tell Them to Its For Security to Your Whatsapp Account ot its  a chat bot At Till That Time You Can get All messages of The Victim!! You Can Get Messages, reactions, conatats , profile pics , Who seen The message  and Many More !!
-###  Happy Hacking ❤️
-# Reach Me!
-<a href="https://github.com/STARK-404/"><img title="Github" src="https://img.shields.io/badge/STARK-404-brightgreen?style=for-the-badge&logo=github"></a>
-<a href="https://www.instagram.com/la1uuuuu/" target="_blank"><img src="https://img.shields.io/badge/Instagram-%23E4405F.svg?&style=flat-square&logo=instagram&logoColor=white" alt="Instagram"></a>
-<img src="https://img.shields.io/twitter/follow/Lalkrishna6314?logo=twitter&r&style=for-the-badge" alt="Lalkrishna6314" />
-<div id='badge'>
+## Linking
 
+When the QR appears, on the phone that owns the WhatsApp account open **WhatsApp → Linked devices → Link a device** and scan the QR.
 
-## Donate Whatsapp-spy
-Buyme A coffee! :
-<a href="https://www.buymeacoffee.com/mrstarkin" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+## Commands
 
-# About 
-<img src="https://profile-counter.glitch.me/{STARK-404}/count.svg" alt="madushadhanushka :: Visitor's Count" />
-<img align="center" src="https://github-readme-stats.vercel.app/api?username=STARK-404&include_all_commits=true&count_private=true&show_icons=true&line_height=20&title_color=2B5BBD&icon_color=1124BB&text_color=A1A1A1&bg_color=0,000000,130F40" alt="my Github Stats"/>
+- `status` — connection state
+- `help` — commands
+- `logout` — properly unlink this linked device
+- `delete-session` — remove local auth files after logout
+- `quit` — close the program without unlinking
 
+## Local sensitive files
 
+`auth_info/` contains long-lived cryptographic credentials. Treat it like a password. Never upload or share that directory. It is included in `.gitignore`.
 
+## Notes
+
+Baileys is an unofficial WhatsApp Web client library and can break when WhatsApp changes its protocol. Use it responsibly and in accordance with WhatsApp's terms.
