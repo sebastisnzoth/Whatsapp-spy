@@ -1,2 +1,1 @@
-import os
-os.system("node index.js")
+from main import *
